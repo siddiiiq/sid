@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Marry siddiq?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: #f0f8ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff69b4;
+            margin: 0 10px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+        }
+
+        .button {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            max-width: 100px;
+        }
+
+        .yes {
+            background-color: #32cd32;
+            color: white;
+        }
+
+        .yes:hover {
+            background-color: #28a428;
+        }
+
+        .no {
+            background-color: #ff6347;
+            color: white;
+            position: fixed;
+            max-width: 100px;
+            max-height: 50px;
+        }
+
+        #message {
+            font-size: 1.8rem;
+            margin-top: 30px;
+            color: #ff1493;
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will You Marry Siddiq? 💍</h1>
+    <div class="button-container">
+        <button class="button yes" onclick="showCongratulations()">Yes 💖</button>
+        <button class="button no" id="noButton" onmouseover="moveNoButton()" ontouchstart="moveNoButton()">No 🙅</button>
+    </div>
+    <div id="message"></div>
+
+    <script>
+        function showCongratulations() {
+            document.getElementById('message').textContent = "Congratulations! 🎉💍 You made the best choice!";
+        }
+
+        function moveNoButton() {
+            const noButton = document.getElementById('noButton');
+            const buttonWidth = noButton.offsetWidth;
+            const buttonHeight = noButton.offsetHeight;
+
+            const x = Math.random() * (window.innerWidth - buttonWidth);
+            const y = Math.random() * (window.innerHeight - buttonHeight);
+
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
